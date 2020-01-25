@@ -437,12 +437,12 @@ namespace json {
 
 	// load a file as a JSON value
 	Value load_file(const char* path, json_error_t* error) {
-		return Value::take_ownership(json_load_file(path, error));
+		return Value::take_ownership(json_load_file(path, 0, error));
 	}
 
 	// load a string as a JSON value
 	Value load_string(const char* string, json_error_t* error) {
-		return Value::take_ownership(json_loads(string, error));
+		return Value::take_ownership(json_loads(string, 0, error));
 	}
 
 } // namespace json
